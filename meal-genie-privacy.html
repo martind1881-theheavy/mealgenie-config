@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – Meal Genie</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:       #3a9e6e;
+      --green-light: #e8f7f0;
+      --green-dark:  #256b49;
+      --orange:      #f0803c;
+      --cream:       #fdf8f2;
+      --ink:         #1e2a22;
+      --muted:       #5a6b62;
+      --border:      #ddeee5;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.75;
+      padding-bottom: 80px;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, #1e4d35 0%, #256b49 60%, #3a9e6e 100%);
+      color: #fff;
+      padding: 56px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .header-emoji {
+      font-size: 3.5rem;
+      display: block;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+    header h1 span { color: #7de4b2; }
+    header p {
+      font-size: 1rem;
+      opacity: 0.85;
+      margin-bottom: 4px;
+    }
+    .updated-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 0.8rem;
+      margin-top: 12px;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── SUMMARY CARD ── */
+    .summary-card {
+      max-width: 800px;
+      margin: -28px auto 0;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 40px rgba(30,74,53,0.12);
+      padding: 28px 32px;
+      position: relative;
+      z-index: 2;
+    }
+    .summary-card .label {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    .summary-card p {
+      font-size: 0.97rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .summary-card strong { color: var(--ink); }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      background: #fff;
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h2 .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      background: var(--green-light);
+      border-radius: 8px;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 20px 0 8px;
+    }
+    h3:first-of-type { margin-top: 0; }
+
+    p { margin-bottom: 12px; font-size: 0.95rem; color: #3a4a40; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+    ul li {
+      margin-bottom: 7px;
+      font-size: 0.95rem;
+      color: #3a4a40;
+    }
+
+    a { color: var(--green-dark); text-decoration: underline; }
+    a:hover { color: var(--orange); }
+
+    /* ── PROVIDER TABLE ── */
+    .provider-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .provider-card {
+      background: var(--green-light);
+      border-radius: 10px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+    }
+    .provider-card strong {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--green-dark);
+      margin-bottom: 4px;
+    }
+    .provider-card span {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* ── WARNING BOX ── */
+    .warning-box {
+      background: #fff8f0;
+      border-left: 4px solid var(--orange);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 0.93rem;
+      color: #7b3e12;
+    }
+    .warning-box strong { color: #c0440e; }
+    .warning-box ul { margin-top: 10px; }
+
+    /* ── PERMISSION BADGES ── */
+    .badge {
+      display: inline-block;
+      background: var(--green-dark);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 12px;
+      margin-right: 6px;
+      vertical-align: middle;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── RIGHTS LIST ── */
+    .rights-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .rights-item {
+      background: var(--green-light);
+      border-radius: 10px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+    }
+    .rights-item strong {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--green-dark);
+      margin-bottom: 4px;
+    }
+    .rights-item span { font-size: 0.83rem; color: var(--muted); }
+
+    /* ── FOOTER ── */
+    .accept-box {
+      background: var(--green-light);
+      border-radius: 12px;
+      border-left: 4px solid var(--green);
+      padding: 18px 24px;
+      margin-top: 32px;
+      font-size: 0.92rem;
+      color: var(--green-dark);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.9rem; }
+      .summary-card, .section { padding: 20px; }
+      .rights-list { grid-template-columns: 1fr; }
+      .provider-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <span class="header-emoji">🧞‍♂️</span>
+  <h1>Privacy Policy<br><span>Meal Genie</span></h1>
+  <p>Chrome Extension by Innov8Edge &nbsp;·&nbsp; AI-Powered Culinary Assistant</p>
+  <span class="updated-badge">Last Updated: March 2026</span>
+</header>
+
+<div class="summary-card">
+  <span class="label">Quick Summary</span>
+  <p>
+    <strong>Meal Genie stores everything locally on your device.</strong> Your API keys (OpenAI, Claude, Gemini, Groq) are saved only in your browser's encrypted storage and are sent exclusively to the AI provider you choose when generating recipes. Generated recipe images are stored only in your browser's local IndexedDB. We never operate our own servers, never collect your data, and never sell or share anything about you.
+  </p>
+</div>
+
+<main>
+
+  <!-- 1. INFORMATION WE COLLECT -->
+  <div class="section">
+    <h2><span class="icon">📋</span> 1. Information We Collect</h2>
+    <p>Meal Genie collects and stores the following information <strong>locally on your device only</strong>:</p>
+
+    <h3>API Keys</h3>
+    <ul>
+      <li>OpenAI API key (for recipe generation and DALL-E image generation)</li>
+      <li>Anthropic Claude API key (optional alternative AI provider)</li>
+      <li>Google Gemini API key (optional alternative AI provider)</li>
+      <li>Groq API key (optional alternative AI provider)</li>
+    </ul>
+    <p>All keys are stored in Chrome's encrypted <code>chrome.storage.local</code>. Innov8Edge never sees, receives, or stores your API keys.</p>
+
+    <h3>Recipe History</h3>
+    <ul>
+      <li>Ingredients you entered, recipes generated, and the date they were created</li>
+      <li>Stored locally in <code>chrome.storage.local</code>, capped automatically to prevent excessive storage use</li>
+    </ul>
+
+    <h3>Generated Images</h3>
+    <ul>
+      <li>AI-generated food images (via DALL-E 3) are cached locally in your browser's IndexedDB (<code>MealGenieImages</code> database)</li>
+      <li>Images are pruned automatically when no longer associated with a current recipe</li>
+      <li>No images are uploaded to or stored on Innov8Edge servers</li>
+    </ul>
+
+    <h3>Usage & Preferences</h3>
+    <ul>
+      <li>Active AI provider selection and failover preferences</li>
+      <li>Free generation count (for free-tier usage limits)</li>
+      <li>Subscription status verified via BrowserBill</li>
+    </ul>
+
+    <p>We do <strong>not</strong> collect your name, email address, location, browsing history, dietary health data, or any information beyond what is listed above.</p>
+  </div>
+
+  <!-- 2. HOW WE USE YOUR INFORMATION -->
+  <div class="section">
+    <h2><span class="icon">⚙️</span> 2. How We Use Your Information</h2>
+    <ul>
+      <li><strong>Recipe Generation:</strong> Your ingredients and preferences are assembled into a prompt and sent to your chosen AI provider to generate recipes</li>
+      <li><strong>Image Generation:</strong> If you have an OpenAI key saved, recipe titles are used to generate food photography via DALL-E 3</li>
+      <li><strong>Image Fallback:</strong> When AI image generation is unavailable, Meal Genie fetches relevant food photos from Unsplash or Pexels using the recipe title as a search term</li>
+      <li><strong>Discover Tab:</strong> Your local recipe history is displayed back to you within the extension — it never leaves your device</li>
+      <li><strong>Provider Failover:</strong> If your active AI provider fails, Meal Genie can automatically switch to another saved provider to ensure uninterrupted recipe generation</li>
+      <li><strong>Subscription Verification:</strong> BrowserBill is used to verify whether you are on the free or premium tier</li>
+    </ul>
+  </div>
+
+  <!-- 3. THIRD-PARTY SERVICES -->
+  <div class="section">
+    <h2><span class="icon">🔗</span> 3. Third-Party Services</h2>
+    <p>Meal Genie may communicate with the following external services. Data only leaves your device when you actively trigger recipe or image generation.</p>
+
+    <div class="provider-grid">
+      <div class="provider-card">
+        <strong>OpenAI</strong>
+        <span>Recipe generation (GPT) and food image generation (DALL-E 3)</span>
+      </div>
+      <div class="provider-card">
+        <strong>Anthropic</strong>
+        <span>Recipe generation via Claude models (optional)</span>
+      </div>
+      <div class="provider-card">
+        <strong>Google Gemini</strong>
+        <span>Recipe generation via Gemini models (optional)</span>
+      </div>
+      <div class="provider-card">
+        <strong>Groq</strong>
+        <span>Fast recipe generation via Groq API (optional)</span>
+      </div>
+      <div class="provider-card">
+        <strong>Unsplash</strong>
+        <span>Free food photo fallback when AI image generation is off</span>
+      </div>
+      <div class="provider-card">
+        <strong>Pexels</strong>
+        <span>Free food photo fallback (secondary)</span>
+      </div>
+      <div class="provider-card">
+        <strong>BrowserBill</strong>
+        <span>Subscription status verification</span>
+      </div>
+    </div>
+
+    <h3>Privacy Policies for Third-Party Services</h3>
+    <ul>
+      <li>OpenAI: <a href="https://openai.com/policies/privacy-policy" target="_blank">openai.com/policies/privacy-policy</a></li>
+      <li>Anthropic: <a href="https://www.anthropic.com/privacy" target="_blank">anthropic.com/privacy</a></li>
+      <li>Google: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+      <li>Groq: <a href="https://groq.com/privacy-policy/" target="_blank">groq.com/privacy-policy</a></li>
+      <li>Unsplash: <a href="https://unsplash.com/privacy" target="_blank">unsplash.com/privacy</a></li>
+      <li>Pexels: <a href="https://www.pexels.com/privacy-policy/" target="_blank">pexels.com/privacy-policy</a></li>
+      <li>BrowserBill: <a href="https://browserbill.com" target="_blank">browserbill.com</a></li>
+    </ul>
+
+    <p><strong>Important:</strong> Only the AI provider you have configured and actively use receives any data from Meal Genie. Unused providers receive nothing.</p>
+  </div>
+
+  <!-- 4. DATA STORAGE -->
+  <div class="section">
+    <h2><span class="icon">💾</span> 4. Data Storage</h2>
+
+    <h3>Local Storage Only</h3>
+    <p>All user data is stored on your device using two browser-native mechanisms:</p>
+    <ul>
+      <li><strong>chrome.storage.local</strong> — API keys, preferences, recipe history, and usage counts</li>
+      <li><strong>IndexedDB (MealGenieImages)</strong> — Cached food images generated by DALL-E or fetched from Unsplash/Pexels</li>
+    </ul>
+
+    <h3>No Cloud Sync</h3>
+    <p>Meal Genie does not operate its own servers and does not back up your data to any cloud service. Your recipes, images, and keys exist only on the device where the extension is installed.</p>
+
+    <h3>Automatic Pruning</h3>
+    <p>Recipe history is capped automatically — older entries are removed when the limit is reached. Cached images are pruned whenever they are no longer associated with a current recipe session, keeping your local storage lean.</p>
+
+    <h3>Clearing Your Data</h3>
+    <p>You can delete all locally stored data at any time via the extension's settings panel. Removing the extension from Chrome also clears all associated storage automatically.</p>
+  </div>
+
+  <!-- 5. AI DISCLAIMER -->
+  <div class="section">
+    <h2><span class="icon">🤖</span> 5. AI-Generated Content</h2>
+    <div class="warning-box">
+      <strong>⚠️ AI-Generated Recipe Notice</strong>
+      <ul>
+        <li>Recipes are generated by AI (OpenAI GPT, Anthropic Claude, Google Gemini, or Groq) and may contain inaccuracies, incorrect cooking times, or unsuitable ingredient combinations</li>
+        <li>Always verify that recipes are safe for your dietary needs, allergies, and health conditions</li>
+        <li>AI output does not constitute nutritional, medical, or dietary advice</li>
+        <li>Food images are AI-generated or sourced from stock photo services — they may not exactly represent the finished dish</li>
+        <li>Innov8Edge is not responsible for outcomes resulting from following AI-generated recipes</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 6. DATA SHARING -->
+  <div class="section">
+    <h2><span class="icon">🚫</span> 6. Data Sharing</h2>
+    <p><strong>We do not sell, rent, or share your personal data with any third parties.</strong></p>
+    <p>Data is transmitted externally only in these specific cases:</p>
+    <ul>
+      <li>Your chosen <strong>AI provider's API</strong> — when you click Generate to create recipes</li>
+      <li><strong>OpenAI DALL-E 3</strong> — when AI image generation is enabled and you have an OpenAI key</li>
+      <li><strong>Unsplash or Pexels</strong> — a recipe title search query when fetching free fallback food photos</li>
+      <li><strong>BrowserBill</strong> — to verify your subscription status</li>
+    </ul>
+    <p>No analytics platforms, advertising networks, data brokers, or Innov8Edge servers receive any information from this extension.</p>
+  </div>
+
+  <!-- 7. YOUR RIGHTS -->
+  <div class="section">
+    <h2><span class="icon">✅</span> 7. Your Rights</h2>
+    <div class="rights-list">
+      <div class="rights-item">
+        <strong>View</strong>
+        <span>All stored recipes and history are visible in the Discover tab</span>
+      </div>
+      <div class="rights-item">
+        <strong>Edit</strong>
+        <span>Update or change your API keys and provider preferences at any time</span>
+      </div>
+      <div class="rights-item">
+        <strong>Delete</strong>
+        <span>Clear all data via the extension settings panel</span>
+      </div>
+      <div class="rights-item">
+        <strong>Remove Keys</strong>
+        <span>Clear any individual API key using the key management panel</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. SECURITY -->
+  <div class="section">
+    <h2><span class="icon">🔒</span> 8. Data Security</h2>
+    <ul>
+      <li>HTTPS encryption for all communications with AI providers, image services, and BrowserBill</li>
+      <li>Local-first architecture — your data stays on your device by default</li>
+      <li>API keys stored in Chrome's encrypted <code>chrome.storage.local</code></li>
+      <li>No server-side processing, logging, or analytics by Innov8Edge</li>
+      <li>IndexedDB image cache is sandboxed to the extension's origin and inaccessible to websites or other extensions</li>
+    </ul>
+  </div>
+
+  <!-- 9. PERMISSIONS -->
+  <div class="section">
+    <h2><span class="icon">🛡️</span> 9. Permissions Explained</h2>
+    <p>Meal Genie requests the following Chrome permissions:</p>
+    <ul>
+      <li><span class="badge">storage</span> Save API keys, recipe history, preferences, and usage counts locally</li>
+      <li><span class="badge">tabs</span> Open recipe results and settings in new tabs</li>
+      <li><span class="badge">windows</span> Manage extension popup and result windows</li>
+      <li><span class="badge">host permissions</span> Communicate with OpenAI, Anthropic, Gemini, Groq, BrowserBill, and GitHub (for remote config)</li>
+    </ul>
+    <p>We request only the minimum permissions necessary for core functionality.</p>
+  </div>
+
+  <!-- 10. CHILDREN -->
+  <div class="section">
+    <h2><span class="icon">👶</span> 10. Children's Privacy</h2>
+    <p>Meal Genie is intended for general audiences aged 13 and over. It is not directed at children under 13. We do not knowingly collect data from children under the age of 13.</p>
+  </div>
+
+  <!-- 11. CHANGES -->
+  <div class="section">
+    <h2><span class="icon">📝</span> 11. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy to reflect changes in functionality or legal requirements. The "Last Updated" date at the top of this page will be revised accordingly. Continued use of the extension after changes are posted constitutes your acceptance of the updated policy.</p>
+  </div>
+
+  <!-- 12. CONTACT -->
+  <div class="section">
+    <h2><span class="icon">✉️</span> 12. Contact Us</h2>
+    <p>If you have questions about this Privacy Policy or your data, please contact:</p>
+    <ul>
+      <li><strong>Company:</strong> Innov8Edge</li>
+      <li><strong>Email:</strong> <a href="mailto:derrick@innov8edge.sbs">derrick@innov8edge.sbs</a></li>
+    </ul>
+  </div>
+
+  <div class="accept-box">
+    🧞‍♂️ By installing and using Meal Genie, you agree to this Privacy Policy. Your culinary data stays yours — always on your device, never on ours.
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Innov8Edge &nbsp;·&nbsp; Meal Genie &nbsp;·&nbsp; All rights reserved</p>
+  </footer>
+
+</main>
+</body>
+</html>
